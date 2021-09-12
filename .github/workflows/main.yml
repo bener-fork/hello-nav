@@ -16,10 +16,11 @@ jobs:
         run: npm i && npm run build
 
       - name: Clone website repo
-        uses: sudosubin/git-clone-action@v1.0.1
+        uses: GuillaumeFalourd/clone-github-repo-action@v1
         with:
           repository: git@github.com:bener-fork/hello-nav.github.io.git
-          path: ./website
+          path: website
+          access-token: ${{ secrets.ACCESS_TOKEN }}
       
       - name: Deploy
         run: |
