@@ -30,3 +30,8 @@ jobs:
           ls
           rm -rf ./*
           ls
+          git config --global user.name
+          git config --global user.email
+          git add .
+          git commit -m "CI BUILD"
+          git push origin master
