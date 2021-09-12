@@ -24,12 +24,10 @@ jobs:
       
       - name: Deploy
         run: |
-          ls
           sudo chown -R $USER:$USER ./hello-nav.github.io
           cd hello-nav.github.io
-          ls -a
           rm -rf ./*
-          ls -a
+          cp -r ../build/* ./
           git config --global user.name ${{ secrets.REPO_USER }}
           git config --global user.email ${{ secrets.REPO_EMAIL }}
           git add .
