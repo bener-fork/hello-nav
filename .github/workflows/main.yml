@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: npm i && npm run build
+
+      - name: Clone website repo
+        uses: sudosubin/git-clone-action@v1.0.1
+        with:
+          repository: git@github.com:bener-fork/hello-nav.github.io.git
+          path: ./website
+      
+      - name: Deploy
+        run: |
+          ls
+          cd website
+          rm -rf ./*
+          cp -r ../build/* ./
+          ls
+          echo ${{ secrets.REPO_EMAIL }}
