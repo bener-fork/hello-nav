@@ -30,8 +30,8 @@ jobs:
           ls -a
           rm -rf ./*
           ls -a
-          git add .
-          git commit -m 'CI'
           git config --global user.name ${{ secrets.REPO_USER }}
           git config --global user.email ${{ secrets.REPO_EMAIL }}
+          git add .
+          git commit -m 'CI'
           git push origin master
