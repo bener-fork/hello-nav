@@ -27,11 +27,12 @@ jobs:
           ls
           sudo chown -R $USER:$USER ./hello-nav.github.io
           cd hello-nav.github.io
-          ls
+          ls -a
           rm -rf ./*
-          ls
-          git config --global user.name
-          git config --global user.email
-          git add .
-          git commit -m "CI BUILD"
-          git push origin master
+          ls -a
+          
+      - name: Push
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: https://github.com/bener-fork/hello-nav.github.io.git
