@@ -25,6 +25,7 @@ jobs:
       - name: Deploy
         run: |
           ls
+          sudo chown -R $USER:$USER ./hello-nav.github.io
           cd hello-nav.github.io
           rm -rf ./*
           cp -r ../build/* ./
