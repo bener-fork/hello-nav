@@ -10,10 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+#       - uses: actions/checkout@v2
 
-      - name: Build
-        run: npm i && npm run build
+#       - name: Build
+#         run: npm i && npm run build
 
       - name: Clone website repo
         uses: GuillaumeFalourd/clone-github-repo-action@v1
