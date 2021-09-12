@@ -30,9 +30,6 @@ jobs:
           ls -a
           rm -rf ./*
           ls -a
-          
-      - name: Push
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          repository: https://github.com/bener-fork/hello-nav.github.io.git
+          git add .
+          git commit -m 'CI'
+          git push origin master
