@@ -18,8 +18,8 @@ jobs:
       - name: Clone website repo
         uses: GuillaumeFalourd/clone-github-repo-action@v1
         with:
-          repository: git@github.com:bener-fork/hello-nav.github.io.git
-          path: website
+          owner: bener-fork
+          repository: hello-nav.github.io
           access-token: ${{ secrets.ACCESS_TOKEN }}
       
       - name: Deploy
