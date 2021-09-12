@@ -27,9 +27,12 @@ jobs:
           ls
           sudo chown -R $USER:$USER ./hello-nav.github.io
           cd hello-nav.github.io
-          rm -rf ./*
-          cp -r ../build/* ./
           ls
-          echo ${{ secrets.REPO_EMAIL }}
+          rm -rf ./*
+          ls
+          echo ${{ github.email }}
+          echo ${{ github.name }}
+          echo ${{ github.user }}
+          echo ${{ github.owner }}
           git config --global user.name
           git config --global user.email
